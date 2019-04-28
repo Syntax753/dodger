@@ -5,6 +5,7 @@ signal hit
 export var speed = 400  # How fast the player will move (pixels/sec).
 var screen_size  # Size of the game window.
 var target = Vector2()
+var velocity = Vector2()
 
 func _ready():
 	screen_size = get_viewport_rect().size
@@ -21,8 +22,8 @@ func _input(event):
 		target = event.position
 	
 func _process(delta):
-	if position.distance_to((target) > 10:
-		velocity = (target-poition).normalized*speed
+	if position.distance_to(target) > 10:
+		velocity = (target-position).normalized()*speed
 	else:
 		velocity = Vector2()
 	
